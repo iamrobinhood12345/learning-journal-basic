@@ -1,3 +1,18 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>Page</title>
+</head>
+<body>
+<h1>Listing of bag items</h1>
+<ul>
+    {% for item in bag_list %}
+        <li>{{item}}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Learning Journal</title>
+    <title>Learning Journal - Sample Post</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -69,89 +84,65 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Learning Journal</h1>
-                        <hr class="small">
-                        <span class="subheading">401d5: Python</span>
+                    <div class="post-heading">
+                        <h1> {{ Journal Title }} </h1>
+                        <h2 class="subheading">
+                            Pitches and tools
+                        </h2>
+                        <span class="meta">Posted by <a href="#">Ben Shields</a> 2016</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title"><a href="/journal/11">
-                            Learning Journal: Day 11
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Pitches and tools
-                        </h3>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>Today I learned a good deal about my classmates. Each of us took turns pitching ideas for project week projects. I was very impressed with the creativity of my classmates. Several of their ideas seem like very good ones. I wish I could help out with all of them. Alas, decisions must be made, and we will eventually come to each work on one of a handful of projects. Such is life. We must choose decisively, and live with our choices for the rest of our days.</p>
+
+                    <p>Avery and Patrick had awesome presentations. I learned about Itertools from Patrick, and can't wait for the chance to practice. Avery presented on an enhancement for Visual Studio that allows you to see documentation for functions as you are writing them. How cool is that!</p>
+
+                    <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+
+                    <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+
+                    <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+
+                    <h2 class="section-heading">The Final Frontier</h2>
+
+                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+
+                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+
+                    <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+
+                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+
+                    <h2 class="section-heading">Reaching for the Stars</h2>
+
+                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+
+                    <a href="#">
+                        <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
                     </a>
-                    <p class="post-meta">Posted by <a href="#">Ben Shields</a> 2016</p>
+                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+
+                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+
+                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+
+                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
                 </div>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            DNA Transcription
-                        </h2>
-                        <h3 class="post-subtitle">
-                            ATGCATGCATGCATGCATGCATGC
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Ben Shields</a> 2016</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Itertools
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Ben Shields</a> 2016</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Lambda
-                        </h2>
-                        <h3 class="post-subtitle">
-                            x = lambda x, y: x+ y
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Ben Shields</a> 2016</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Learning from our Mistakes: Journey of a Computer Scientist
-                        </h2>
-                        <h3 class="post-subtitle">
-                            How to iterate on improvement in the learning of programming.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Ben Shields</a> 2016</p>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
             </div>
         </div>
-    </div>
+    </article>
 
     <hr>
 
@@ -186,7 +177,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Ben Shields 2016</p>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
                 </div>
             </div>
         </div>
