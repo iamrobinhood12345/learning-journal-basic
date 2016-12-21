@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Learning Journal</title>
+    <title>Learning Journal - Create a New Post</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -69,14 +69,14 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Learning Journal</h1>
+                    <div class="page-heading">
+                        <h1>Create a New Post</h1>
                         <hr class="small">
-                        <span class="subheading">401d5: Python</span>
+                        <span class="subheading">Think hard about this...</span>
                     </div>
                 </div>
             </div>
@@ -87,30 +87,49 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title"><a href="/journal/{{entry['id']}}">
-                            {{ entry['title'] }}
-                        </h2>
-                        <h3 class="post-subtitle">
-                            {{ entry['title1'] }}
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Ben Shields</a>
-                    {{ entry['date'] }}</p>
+                <p>Write a new post here!</p>
+                <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+                <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+                <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+                <form name="sentMessage" id="contactForm" novalidate>
+                   <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="Title" id="post_title" required data-validation-required-message="Please enter a title.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Subtitle</label>
+                            <input type="text" class="form-control" placeholder="Subtitle" id="post_subtitle" required data-validation-required-message="Please enter a subtitle.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
 
-                    <br/>
-                    <p> {{ entry['body'] }} </p>
-                    <br/>
-                    <a href="/journal/{{entry['id']}}/edit-entry"><p>Edit This Post</p></a>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Text Body</label>
+                            <textarea rows="10" class="form-control" placeholder="Post Body" id="message" required data-validation-required-message="Please enter a body for your post."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-default">Post</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
