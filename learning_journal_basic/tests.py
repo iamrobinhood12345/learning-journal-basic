@@ -12,5 +12,84 @@ def test_home_page_renders_file_data(req):
     """My home page view returns some data."""
     from .views import index_page
     response = index_page(req)
-    assert "<p>Today I learned a good deal about my classmates. Each of us took turns pitching ideas for project week projects. I was very impressed with the creativity of my classmates. Several of their ideas seem like very good ones. I wish I could help out with all of them. Alas, decisions must be made, and we will eventually come to each work on one of a handful of projects. Such is life. We must choose decisively, and live with our choices for the rest of our days.</p><p>Avery and Patrick had awesome presentations. I learned about Itertools from Patrick, and can't wait for the chance to practice. Avery presented on an enhancement for Visual Studio that allows you to see documentation for functions as you are writing them. How cool is that!</p>" in str(response)
+    some_html = "<p>Today I"
+    assert some_html in str(response)
 
+
+def test_post_view():
+    from .views import post_page
+    req.matchdict = {'id': '11'}
+    info = post_page(req)
+    assert "title" in str(info)
+
+
+def test_update_view():
+    from .views import update_page
+    req.matchdict = {'id': '11'}
+    info = update_page(req)
+    assert "title" in str(info)
+
+
+def test_new_post_view():
+    from .views import new_post_page
+    info = new_post_page(req)
+    assert "title" in str(info)
+
+
+def test_about_view():
+    from .views import about_page
+    info = about_page(req)
+    assert "title" in str(info)
+
+
+@pytest.fixture()
+def testapp():
+    """Create an instance of our app for testing."""
+    from learning_journal_basic import main
+    app = main({})
+    from webtest import TestApp
+    return TestApp(app)
+
+
+def test_layout_list(testapp):
+    """Test that the contents of the list page contains something specific to this website."""
+    response = testapp.get('/', status=200)
+    html = response.html
+    assert 'Ben Shields' in str(html)
+
+
+def test_list_contents(testapp):
+    """Test that the contents of the list page contains as many <h2> tags as journal entries."""
+    from .views import ENTRIES
+    response = testapp.get('/', status=200)
+    html = response.html
+    assert len(ENTRIES) == len(html.findAll('h2'))
+
+
+def test_layout_post(testapp):
+    """Test that the contents of the post page contains something specific to this website."""
+    response = testapp.get('/', status=200)
+    html = response.html
+    assert 'Ben Shields' in str(html)
+
+
+def test_layout_update(testapp):
+    """Test that the contents of the update page contains something specific to this website."""
+    response = testapp.get('/', status=200)
+    html = response.html
+    assert 'Ben Shields' in str(html)
+
+
+def test_layout_new_post(testapp):
+    """Test that the contents of the new post page contains something specific to this website."""
+    response = testapp.get('/', status=200)
+    html = response.html
+    assert 'Ben Shields' in str(html)
+
+
+def test_new_post_contents(testapp):
+    """Test that the contents of the new post page contains as many <h2> tags as journal entries."""
+    from .views import ENTRIES
+    response = testapp.get('/', status=200)
+    html = response.html
+    assert len(ENTRIES) == len(html.findAll('h2'))

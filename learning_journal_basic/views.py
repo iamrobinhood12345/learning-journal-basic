@@ -16,24 +16,14 @@ ENTRIES = [
 
 @view_config(route_name='list', renderer='templates/list.jinja2')
 def index_page(request):
-    # imported_text = open(os.path.join(HERE, 'static', 'ben-files', 'index.html')).read()
-    # return imported_text
     return {"ENTRIES": ENTRIES}
 
 
 @view_config(route_name='detail', renderer='templates/post_template.jinja2')
 def post_page(request):
-    # imported_text = open(os.path.join(HERE, 'static', 'ben-files', 'post.html')).read()
-    # return Response(imported_text)
     the_id = request.matchdict["id"]
     entry = filter(lambda x: x["id"] == the_id, ENTRIES)[0]
     return {"entry": entry}
-
-
-@view_config(route_name='about', renderer='string')
-def about_page(request):
-    imported_text = open(os.path.join(HERE, 'static', 'ben-files', 'about.html')).read()
-    return Response(imported_text)
 
 
 @view_config(route_name='update', renderer='templates/update_template.jinja2')
@@ -45,4 +35,9 @@ def update_page(request):
 
 @view_config(route_name='create', renderer='templates/new_post_template.jinja2')
 def new_post_page(request):
+    return {"ENTRIES": ENTRIES}
+
+
+@view_config(route_name='about', renderer='templates/about_template.jinja2')
+def about_page(request):
     return {"ENTRIES": ENTRIES}
