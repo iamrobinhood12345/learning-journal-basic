@@ -85,11 +85,3 @@ def test_layout_new_post(testapp):
     response = testapp.get('/', status=200)
     html = response.html
     assert 'Ben Shields' in str(html)
-
-
-def test_new_post_contents(testapp):
-    """Test that the contents of the new post page contains as many <h2> tags as journal entries."""
-    from .views import ENTRIES
-    response = testapp.get('/', status=200)
-    html = response.html
-    assert len(ENTRIES) == len(html.findAll('h2'))
