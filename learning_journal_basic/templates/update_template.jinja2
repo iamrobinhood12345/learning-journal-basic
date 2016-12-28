@@ -91,26 +91,26 @@
                 <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
                 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
                 <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form method="post" name="sentMessage" id="contactForm" novalidate>
                    <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Title</label>
-                            <input type="text" class="form-control" placeholder="Title" id="post_title" value={{entry['title']}} required data-validation-required-message="Please enter a title.">
+                            <input type="text" name="title" class="form-control" placeholder="Title" id="post_title" value="{{entry['title']}}" required data-validation-required-message="Please enter a title.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Subtitle</label>
-                            <input type="text" class="form-control" placeholder="Subtitle" id="post_subtitle" value={{entry['title1']}} required data-validation-required-message="Please enter a subtitle.">
+                            <input type="text" name="title1" class="form-control" placeholder="Subtitle" id="post_subtitle" value="{{entry['title1']}}" required data-validation-required-message="Please enter a subtitle.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
 
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" value='Ben' required data-validation-required-message="Please enter your name."> 
+                            <label>Creation Date</label>
+                            <input type="text" name="creation_date" class="form-control" placeholder="Name" id="name" value="{{entry['creation_date']}}" required data-validation-required-message="Please enter your name."> 
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Text Body</label>
-                            <textarea rows="10" class="form-control" placeholder="Post Body" id="message" required data-validation-required-message="Please enter a body for your post.">{{ entry['body']}}</textarea>
+                            <textarea rows="10" name="body" class="form-control" placeholder="Post Body" id="message" required data-validation-required-message="Please enter a body for your post.">{{ entry['body']}}</textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>

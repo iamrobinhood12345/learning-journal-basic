@@ -68,16 +68,16 @@ def test_list_contents(testapp):
 
 def test_layout_post(testapp):
     """Test that the contents of the post page contains something specific to this website."""
-    response = testapp.get('/', status=200)
+    response = testapp.get('/journal/12', status=200)
     html = response.html
-    assert 'Ben Shields' in str(html)
+    assert 'Day 12' in str(html)
 
 
 def test_layout_update(testapp):
     """Test that the contents of the update page contains something specific to this website."""
-    response = testapp.get('/', status=200)
+    response = testapp.get('/journal/11/edit-entry', status=200)
     html = response.html
-    assert 'Ben Shields' in str(html)
+    assert 'Day 11' in str(html)
 
 
 def test_layout_new_post(testapp):
